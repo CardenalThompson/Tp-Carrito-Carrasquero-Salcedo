@@ -15,10 +15,10 @@
                      <img src="<%=item.imagen%>" style="max-height: 10vw; max-width: 10vw; margin: 3vw;" />
                     <h4 class="card-title"> <b ><%= item.nombre %></b></h4>
                     <h5 class="card-title"><%= item.marca %></h5>
-                    <h5 class="card-title">$<%= item.precio %></h5>
+                    <h5 class="card-title"><%= string.Format("{0:C}", item.precio) %></h5>
                     <a href="Carrito.aspx?idArticulo=<%=item.id.ToString() %>" class="btn btn-success">Agregar</a>
                     <br />
-                    <a href="Detalle.aspx?idArticulo=<%=item.id.ToString() %>" class ="btn btn-info">Detalle</a>
+                    <a href="DetalleArticulo.aspx?idArticulo=<%=item.id.ToString() %>" class ="btn btn-info">Detalle</a>
                      <%-- no debe tener espacios  el href si no te manda error de objeto no instanciado--%>
                 </div>
             </div>

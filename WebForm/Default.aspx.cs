@@ -21,9 +21,11 @@ namespace WebForm
             if (Session["ListArticulos"] == null || listaArticulos.Count() == 0) // si la session "lista Aritculo" es nulo o la lista de articulos no tiene elementos
             {
                 listaArticulos = negocio.listar();                                //llenamos la variable listaArticulos de todos los articulos en base de datos
+                Session.Add("ListArticulos", listaArticulos);
+                return;
             }
-            Session.Add("ListArticulos", new List<Articulo>());
 
+            Session.Add("ListArticulos", new List<Articulo>());
 
         }
     }

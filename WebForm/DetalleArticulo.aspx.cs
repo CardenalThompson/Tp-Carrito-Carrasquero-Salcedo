@@ -14,19 +14,27 @@ namespace WebForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int id = int.Parse(Request.QueryString["idArticulo"]);
-            List<Articulo> listado = (List<Articulo>)Session["ListArticulos"];
-            Articulo articulo = listado.Find(x => x.id == id);
-
-            if (articulo == null)
+            try
             {
-                return;
-            }
 
-            lblselecionado.Text = articulo.nombre;
-            Imagenselecionado.ImageUrl = articulo.imagen;
-            lblMarca.Text = articulo.marca.nombre;
-            lblPrecio.Text = articulo.precio.ToString("C", CultureInfo.CurrentCulture);
+                int id = int.Parse(Request.QueryString["idArticulo"]);
+                List<Articulo> listado = (List<Articulo>)Session["ListArticulos"];
+                Articulo articulo = listado.Find(x => x.id == id);
+
+                if (articulo == null)
+                {
+                    return;
+                }
+
+                lblselecionado.Text = articulo.nombre;
+                Imagenselecionado.ImageUrl = articulo.imagen;
+                lblMarca.Text = articulo.marca.nombre;
+                lblPrecio.Text = articulo.precio.ToString("C", CultureInfo.CurrentCulture);
+            }
+            catch
+            {
+                Response.Redirect("Default.aspx");
+            }
         }
     }
 }

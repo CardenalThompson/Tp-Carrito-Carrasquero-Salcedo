@@ -13,6 +13,7 @@ namespace WebForm
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/WebFormsJs").Include(
+                            "~/Scripts/bootstrap.js",
                             "~/Scripts/WebForms/WebForms.js",
                             "~/Scripts/WebForms/WebUIValidation.js",
                             "~/Scripts/WebForms/MenuStandards.js",

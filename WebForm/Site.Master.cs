@@ -15,7 +15,6 @@ namespace WebForm
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            listaBuscar = (List<Articulo>)Session["ListArticulos"];
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
@@ -27,7 +26,7 @@ namespace WebForm
             {
                 lista = Negocio.listar();
                 listaBuscar = lista.FindAll(x => x.nombre.ToLower().Contains(TexBuscar.Text.ToLower()) || x.marca.nombre.ToLower().Contains(TexBuscar.Text.ToLower())); //buscamos coinsidencias por nombre o por marca
-                Session.Add("ListArticulos", listaBuscar);     // agregamos a la session "carrito" el articulo encontrado 
+                Session.Add("ListBuscar", listaBuscar);     // agregamos a la session "carrito" el articulo encontrado 
                 Response.Redirect("Default.aspx");
             }
             catch (Exception ex)

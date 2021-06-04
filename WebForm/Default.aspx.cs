@@ -14,21 +14,19 @@ namespace WebForm
         public List<Articulo> listaArticulos { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+                ArticuloNegocio negocio = new ArticuloNegocio();             
 
             try
             {
-                ArticuloNegocio negocio = new ArticuloNegocio();
-
-                listaArticulos = (List<Articulo>)Session["ListArticulos"];
-               
-                if (Session["ListArticulos"] == null) // si la session "lista Aritculo" es nulo o la lista de articulos no tiene elementos
+                if (Session["ListBuscar"] == null)                                  // si la session "ListBuscar" es nulo 
                 {
                     listaArticulos = negocio.listar();                                //llenamos la variable listaArticulos de todos los articulos en base de datos
-                    Session.Add("ListArticulos", listaArticulos);
-                    return;
                 }
-
-                Session.Add("ListArticulos", listaArticulos);
+                else
+                {
+                  listaArticulos = (List<Articulo>)Session["ListBuscar"];         //si no llenamos la listaArticulos con la ssesion de busqueda
+                    Session["ListBuscar"] = null;
+                }
             }
             catch
             {

@@ -14,11 +14,13 @@ namespace WebForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ArticuloNegocio negosio = new ArticuloNegocio();
+           
             try
             {
 
                 int id = int.Parse(Request.QueryString["idArticulo"]);
-                List<Articulo> listado = (List<Articulo>)Session["ListArticulos"];
+                List<Articulo> listado = negosio.listar();
                 Articulo articulo = listado.Find(x => x.id == id);
 
                 if (articulo == null)

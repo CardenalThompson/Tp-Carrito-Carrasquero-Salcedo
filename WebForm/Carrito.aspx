@@ -7,6 +7,7 @@
                 <th scope="col"> Codigo</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Precio</th> 
+                <th scope="col">cantidad</th> 
             </tr>                 
         
          <%foreach(Dominio.Articulo item in carritoCompra)
@@ -16,6 +17,7 @@
                    <td> <b><%=item.codigo %> </b></td>
                    <td><%=item.nombre %></td>
                    <td><%=string.Format("{0:C}",item.precio) %></td>
+                   <td><a class="btn btn-primary" href="Carrito.aspx?idCant=<%= item.id %>" role="button">+</a></td> 
                    <td><a class="btn btn-warning" href="Carrito.aspx?idCancelar=<%= item.id %>" role="button">Cancelar</a></td> 
        
               </tr>             

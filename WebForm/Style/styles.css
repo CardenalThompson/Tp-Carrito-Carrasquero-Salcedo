@@ -1,0 +1,35 @@
+﻿body {
+}
+
+.cardstyle {
+   
+    border:ridge;
+    border-color: brown;
+    padding-bottom: 1rem;
+    background-color: white;
+}
+
+.carousel-inner{
+    max-height: 20rem;
+}
+.carousel-inner .carousel-item img{
+    height:300px;
+    width:1200px;
+}
+
+.seguridad{
+    font-size: 90px;
+    margin-top: 0px;
+    font-weight: 800;
+    color:black;
+    text-align: center;
+    position: relative;
+}
+
+.send{
+
+}
+.credit{
+
+}
+

@@ -21,31 +21,34 @@
 </head>
 <body style= " background-image: url(Img/fondo.jpg); background-attachment: fixed;"> 
         
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Articulos E & T</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Articulos E & T</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarScroll">
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                  <li class="nav-item">
-                    <a class="nav-link active" href="Default.aspx">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="About.aspx">About</a>
-                  </li> 
-                  <li class="nav-item">
-                    <a class="nav-link" href="COntact.aspx">Contact</a>
-                  </li> 
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Default.aspx">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="About.aspx">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="COntact.aspx">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Carrito.aspx"><i class="bi bi-cart4"></i></a>
+                    </li>
                 </ul>
                 <form runat="server" class="d-flex">
-                  <asp:TextBox ID="TexBuscar" runat="server" >  </asp:TextBox>
-                   <asp:Button ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" Text="Search" />             
+                    <asp:TextBox ID="TexBuscar" runat="server">  </asp:TextBox>
+                    <asp:Button ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" Text="Search" />
                 </form>
-              </div>
             </div>
-       </nav>
+        </div>
+    </nav>
 
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">

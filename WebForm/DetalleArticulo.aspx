@@ -18,7 +18,7 @@
         <div class="row bg-gradient">
             <div class="col-sm">
                 <div class="col-md-10 col-sm-10 col-xs-1">
-                    <img src="<%=item.imagen%>" />
+                    <img src="<%=item.imagen%>" class="card-img-top" style="height:100%;"/>
                 </div>
             </div>
             <div class="card" style="width: 25rem">
@@ -43,7 +43,7 @@
 
                 <div class="card-body">
                     <a href="Carrito.aspx?idArticulo=<%=item.id.ToString() %>" class="btn btn-success"><i class="bi bi-cart4"></i>Agregar</a>
-                    <%--<br />--%>
+                   
                     <a href="Default.aspx" class="btn btn-info btn-bg">Volver</a>
                 </div>
             </div>

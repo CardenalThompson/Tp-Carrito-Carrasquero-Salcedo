@@ -14,7 +14,7 @@
 
 
         { %>
-    <div class="container">
+    <div class="container total">
         <div class="row bg-gradient">
             <div class="col-sm">
                 <div class="col-md-10 col-sm-10 col-xs-1">

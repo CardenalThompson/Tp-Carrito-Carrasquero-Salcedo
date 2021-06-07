@@ -60,16 +60,18 @@
         { %>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
                    <div class="card text-center h-100 cardstyle">
-                       <img src="<%=item.imagen%>"/>
+                       <img src="<%=item.imagen%>" alt="no hay imagen"/>
                        <div class="card-body flex-column">
                                <h3 class="card-title"> <b ><%= item.nombre %>  </b><span class="badge bg-secondary">New</span></h3>
                                <h5 class="card-title"><%= item.marca %></h5>
                                <h5 class="card-title"><%= string.Format("{0:C}", item.precio) %></h5>
                        </div>
-                       <a href="Carrito.aspx?idArticulo=<%=item.id.ToString() %>" class="btn btn-success"><i class="bi bi-cart4"></i> Agregar</a>
-                       <br />
-                       <a href="DetalleArticulo.aspx?idArticulo=<%=item.id.ToString() %>" class ="btn btn-info">Detalle</a>
-                        <%--no debe tener espacios  el href si no te manda error de objeto no instanciado--%>
+                       <div class="d-grid gap-2 col-9 mx-auto">
+                          <a href="Carrito.aspx?idArticulo=<%=item.id.ToString() %>" class="btn btn-success"><i class="bi bi-cart4"></i> Agregar</a>
+                          <br />
+                          <a href="DetalleArticulo.aspx?idArticulo=<%=item.id.ToString() %>" class ="btn btn-info">Detalle</a>
+                          <%--no debe tener espacios  el href si no te manda error de objeto no instanciado--%>
+                      </div>
                   </div>    
                 </div>
       <% } %>

@@ -13,22 +13,22 @@ namespace WebForm
         public Articulo articuloNuevo { get; set; }
         public List<Articulo> carritoCompra = null;
         private int idArticulo;
+        decimal total = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             carritoCompra = new List<Articulo>();
-            idArticulo = Convert.ToInt32(Request.QueryString["idArticulo"]);
+            ;
 
             if (Session["carrito"] == null)    // si session "carrito" es nulo creamos una session del lista de articulos
             {
                 Session.Add("carrito", new List<Articulo>());
-
             }
 
-            if (idArticulo != 0)
+            if ((Request.QueryString["idArticulo"]!=null))
             {
-
                 try
                 {
+                    idArticulo = Convert.ToInt32(Request.QueryString["idArticulo"]);
                     articuloNuevo = new Articulo();
                     ArticuloNegocio auxNegocio = new ArticuloNegocio();
                     articuloNuevo = auxNegocio.listar().Find(x => x.id == idArticulo);  // le asigna a la variable articulonuevo  el id encontrado
@@ -40,7 +40,6 @@ namespace WebForm
                 catch (Exception)
                 {
                     Response.Redirect("Error.aspx");
-
                 }
 
             }
@@ -50,14 +49,20 @@ namespace WebForm
                 carritoCompra = (List<Articulo>)Session["carrito"];                   // llenamos  carritoCompra con la session "carrito" que tiene al lista de articulos
                 carritoCompra.Remove(carritoCompra.Find(x => idArticulo == x.id)); // se remueve  de la lista de carrito compra el id seleccionado
                 Session["carrito"] = carritoCompra;
-
-
             }
             else
             {
                 carritoCompra = (List<Articulo>)Session["carrito"]; // si no se agrega un articulo  se llena carrito compra con la session "carrito"
-
             }
+            cacular();
+        }
+       private void cacular()
+        {
+            foreach (var item in carritoCompra)
+            {
+                total = total + item.precio;
+            }
+            lbtotal.Text = string.Format("{0:C}", total);
 
         }
     }

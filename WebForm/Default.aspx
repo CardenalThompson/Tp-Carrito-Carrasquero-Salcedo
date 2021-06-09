@@ -35,17 +35,17 @@
               <br />
              <div class="container px-4">
                  <div class="row gx-5">
-                   <div class="col">
+                   <div class="col12 col-sm-6">
                     <div class="p-3 border bg-light">
                         <img src="Img/sorry.jpg" class="card-img-top" alt="...">
                     </div>
                    </div>
-                   <div class="col text-center">
+                   <div class="col12 col-sm-6 text-center">
                      <div class="p-3 border bg-light ">
-                          <h1 style="color:darkslategray">Al parecer no hay articulos que coincidan con tu busqueda</h1>
+                          <h1 style="color:brown">Al parecer no hay articulos que coincidan con tu busqueda</h1>
                      </div>
                            <br />
-                          <a href="Default.aspx" class ="btn btn-info btn lg" >Ver mas Articulos</a>
+                          <a href="Default.aspx" class ="btn btn-success btn lg" >Ver mas Articulos</a>
                    </div>
                  </div>
              </div>

@@ -17,8 +17,6 @@ namespace WebForm
         protected void Page_Load(object sender, EventArgs e)
         {
             carritoCompra = new List<Articulo>();
-            ;
-
             if (Session["carrito"] == null)    // si session "carrito" es nulo creamos una session del lista de articulos
             {
                 Session.Add("carrito", new List<Articulo>());
@@ -45,10 +43,18 @@ namespace WebForm
             }
             if (Request.QueryString["idCancelar"] != null)   //si se hizo click en el boton cancelar
             {
+                try
+                {
+
                 idArticulo = Convert.ToInt32(Request.QueryString["idCancelar"]); //comvertimos a entero el id de articulo
                 carritoCompra = (List<Articulo>)Session["carrito"];                   // llenamos  carritoCompra con la session "carrito" que tiene al lista de articulos
                 carritoCompra.Remove(carritoCompra.Find(x => idArticulo == x.id)); // se remueve  de la lista de carrito compra el id seleccionado
                 Session["carrito"] = carritoCompra;
+                }
+                catch
+                {
+                    Response.Redirect("Error.aspx");
+                }
             }
             else
             {

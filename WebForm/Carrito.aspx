@@ -3,13 +3,14 @@
     
      <div class="row pt-3">
         <div class="col-12 col-md-9  ">
-             <table class="table table-hover">          
+             <table class="table table-hover table-dark table-striped">          
             <tr>
                 <th scope="col"> </th>
                 <th scope="col"> Codigo</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Precio</th> 
                 <th scope="col">cantidad</th> 
+                <th scope="col"></th>
             </tr>         
          <%foreach(Dominio.Articulo item in carritoCompra)
           { %>              

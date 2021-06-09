@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="WebForm.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
+     <h2>contactanos</h2>
  <div class="col-6">
      <div class="mb-3">
        <label for="formGroupExampleInput" class="form-label">Nombre</label>
@@ -15,6 +15,9 @@
        <label for="formGroupExampleInput2" class="form-label">Comentarios</label>
        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
      </div>
+     <br />
+     <a href="Default.aspx" class ="btn btn-secondary btn lg" >enviar</a>
+     <br />
   </div>
          <div style="color:white;">
              <address>

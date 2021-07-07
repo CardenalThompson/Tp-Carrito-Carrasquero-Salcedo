@@ -12,7 +12,7 @@ namespace WebForm
     {
         public Articulo articuloNuevo { get; set; }
         public List<Articulo> carritoCompra = null;
-        private int idArticulo;
+        private int idArticulo=0;
         decimal total = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,8 +21,10 @@ namespace WebForm
             {
                 Session.Add("carrito", new List<Articulo>());
             }
+    
 
-            if ((Request.QueryString["idArticulo"]!=null))
+
+            if (Request.QueryString["idArticulo"] !=null)
             {
                 try
                 {
@@ -41,7 +43,7 @@ namespace WebForm
                 }
 
             }
-            if (Request.QueryString["idCancelar"] != null)   //si se hizo click en el boton cancelar
+            if (Request.QueryString["idCancelar"]!=null)   //si se hizo click en el boton cancelar
             {
                 try
                 {
@@ -73,3 +75,13 @@ namespace WebForm
         }
     }
 }
+
+
+//carritoCompra = (List<Articulo>)Session["ListaCarrito"];// mi lista con los Items del carrito q agregue en session
+//foreach (var item in carritoCompra)
+//{
+//    if (item.id == idArticulo)
+//    {
+//        item.cantidad++;
+//    }
+//}

@@ -33,14 +33,13 @@ namespace WebForm
         {
             List<Articulo> lista = new List<Articulo>();
             ArticuloNegocio Negocio = new ArticuloNegocio();
-            if (TexBuscar.Text!="")
-            {
-               lista = Negocio.listar();
-               listaBuscar = lista.FindAll(x => x.nombre.ToLower().Contains(TexBuscar.Text.ToLower()) || x.marca.nombre.ToLower().Contains(TexBuscar.Text.ToLower())); //buscamos coinsidencias por nombre o por marca
-               Session.Add("ListBuscar", listaBuscar);     // agregamos a la session "carrito" el articulo encontrado 
-               Response.Redirect("Default.aspx");                       
-            }
-
+                if (TexBuscar.Text!="")
+                {
+                   lista = Negocio.listar();
+                   listaBuscar = lista.FindAll(x => x.nombre.ToLower().Contains(TexBuscar.Text.ToLower()) || x.marca.nombre.ToLower().Contains(TexBuscar.Text.ToLower())); //buscamos coinsidencias por nombre o por marca
+                   Session.Add("ListBuscar", listaBuscar);     // agregamos a la session "carrito" el articulo encontrado 
+                   Response.Redirect("Default.aspx");                       
+                }
         }
     }
 }
